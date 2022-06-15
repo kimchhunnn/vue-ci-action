@@ -18,10 +18,8 @@ jobs:
         run: yarn lint
 
       - name: Building the project
+        env:
+          VUE_APP_NAME: ${{ secrets.VUE_APP_NAME }
         run: yarn build
-
-      - name: Building the project
-        run: yarn build
+        run: echo "Application name: ${{VUE_APP_NAME}}" 
       
-      - name: Debug
-        run: echo "Application name:${{secrets.VUE_APP_NAME}}"  
