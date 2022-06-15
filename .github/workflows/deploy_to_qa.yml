@@ -27,7 +27,7 @@ jobs:
           VUE_APP_NAME: ${{ secrets.VUE_APP_NAME }}
         run: echo "Application name:$VUE_APP_NAME"
       
-      - uses: actions/download-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
           path: dist
       
