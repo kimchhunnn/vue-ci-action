@@ -16,4 +16,4 @@ jobs:
       - name: Building the project
       - run: npm run build
       - name: Debug
-      - run: echo "Application name: ${{env.VUE_APP_NAME}}"  
+      - run: echo "Application name:${{env.VUE_APP_NAME}}"  
