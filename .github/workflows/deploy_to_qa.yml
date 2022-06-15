@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - name: Installing project dependencies
-      - run: npm install
+        run: npm install
       - name: Building the project
-      - run: npm run build
+        run: npm run build
       - name: Debug
-      - run: echo "Application name:${{env.VUE_APP_NAME}}"  
+        run: echo "Application name:${{env.VUE_APP_NAME}}"  
