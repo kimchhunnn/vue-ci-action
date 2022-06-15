@@ -28,8 +28,6 @@ jobs:
         run: echo "Application name:$VUE_APP_NAME"
       
       - uses: actions/download-artifact@v3
-        with:
-          name: dist
           
       - name: Display structure of downloaded files
         run: ls -R
