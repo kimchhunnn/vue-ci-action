@@ -25,4 +25,11 @@ jobs:
       - name: Debug
         env:
           VUE_APP_NAME: ${{ secrets.VUE_APP_NAME }}
-        run: echo "Application name:$VUE_APP_NAME"  
+        run: echo "Application name:$VUE_APP_NAME"
+      
+      - uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+          
+      - name: Display structure of downloaded files
+        run: ls -R
