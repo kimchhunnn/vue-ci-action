@@ -1,0 +1,19 @@
+name: DEPLOY TO QA
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+      - name: Installing project dependencies
+      - run: npm install
+      - name: Building the project
+      - run: npm run build
+      - name: Debug
+      - run: echo "Application name: ${{env.VUE_APP_NAME}}"  
