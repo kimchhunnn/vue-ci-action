@@ -22,14 +22,6 @@ jobs:
           VUE_APP_NAME: ${{ secrets.VUE_APP_NAME }}
         run: yarn build
       
-      - name: Debug
-        env:
-          VUE_APP_NAME: ${{ secrets.VUE_APP_NAME }}
-        run: echo "Application name:$VUE_APP_NAME"
-      
       - uses: actions/upload-artifact@v3
         with:
           path: dist
-      
-      - name: 'Echo download path'
-        run: echo ${{steps.download.outputs.download-path}}
