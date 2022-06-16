@@ -12,8 +12,16 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
       - name: Installing project dependencies
-      - run: npm install
+        run: yarn install
+
+      - name: Code linting
+        run: yarn lint
+
       - name: Building the project
-      - run: npm run build
-      - name: Debug
-      - run: echo "Application name: ${{env.VUE_APP_NAME}}"  
+        env:
+          VUE_APP_NAME: ${{ secrets.VUE_APP_NAME }}
+        run: yarn build
+      
+      - uses: actions/upload-artifact@v3
+        with:
+          path: dist
